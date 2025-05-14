@@ -1,0 +1,704 @@
+/* Стилі для контенту блогу */
+.blog-content,
+.prose,
+.preserve-formatting {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif !important;
+  line-height: 1.6 !important;
+  color: #f8f9fa !important;
+}
+
+/* Відступи між абзацами */
+.blog-content p,
+.prose p,
+.preserve-formatting p {
+  margin-bottom: 1.5em !important;
+  margin-top: 0 !important;
+  color: #f8f9fa !important;
+  white-space: pre-wrap !important; /* This preserves whitespace and line breaks */
+}
+
+/* Переконуємося, що останній абзац не має нижнього відступу */
+.blog-content p:last-child,
+.prose p:last-child,
+.preserve-formatting p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Empty paragraphs should still have height */
+.prose p.empty-paragraph {
+  min-height: 1.75em !important;
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+/* Indentation support */
+.prose .indent {
+  display: inline-block !important;
+  width: 2em !important;
+}
+
+/* Додаємо стилі для <br> тегів, якщо вони використовуються */
+.blog-content br,
+.prose br,
+.preserve-formatting br {
+  display: block !important;
+  content: "" !important;
+  margin-top: 1em !important;
+}
+
+/* Preserved line breaks */
+.prose br.preserved-break {
+  display: block !important;
+  content: "" !important;
+  margin-top: 0.75em !important;
+}
+
+/* Стилі для заголовків */
+.blog-content h1,
+.prose h1,
+.preserve-formatting h1,
+article .blog-content h1,
+article .prose h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.8em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+.blog-content h2,
+.prose h2,
+.preserve-formatting h2,
+article .blog-content h2,
+article .prose h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-top: 1.4em !important;
+  margin-bottom: 0.7em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+.blog-content h3,
+.prose h3,
+.preserve-formatting h3,
+article .blog-content h3,
+article .prose h3 {
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.3em !important;
+  margin-bottom: 0.6em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+.blog-content h4,
+.prose h4,
+.preserve-formatting h4,
+article .blog-content h4,
+article .prose h4 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.6em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+.blog-content h5,
+.prose h5,
+.preserve-formatting h5,
+article .blog-content h5,
+article .prose h5 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+.blog-content h6,
+.prose h6,
+.preserve-formatting h6,
+article .blog-content h6,
+article .prose h6 {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
+  color: #f8f9fa !important;
+  line-height: 1.3 !important;
+}
+
+/* Стилі для списків */
+.blog-content ul,
+.blog-content ol,
+.prose ul,
+.prose ol,
+.preserve-formatting ul,
+.preserve-formatting ol,
+article .blog-content ul,
+article .blog-content ol,
+article .prose ul,
+article .prose ol {
+  margin-bottom: 1.5em !important;
+  padding-left: 1.5em !important;
+  list-style-position: outside !important;
+}
+
+.blog-content ul,
+.prose ul,
+.preserve-formatting ul,
+article .blog-content ul,
+article .prose ul {
+  list-style-type: disc !important;
+}
+
+.blog-content ol,
+.prose ol,
+.preserve-formatting ol,
+article .blog-content ol,
+article .prose ol {
+  list-style-type: decimal !important;
+}
+
+.blog-content li,
+.prose li,
+.preserve-formatting li,
+article .blog-content li,
+article .prose li {
+  margin-bottom: 0.5em !important;
+  display: list-item !important;
+  color: #f8f9fa !important;
+  white-space: pre-wrap !important; /* Preserve whitespace in list items */
+}
+
+/* Nested lists */
+.prose ul ul,
+.prose ol ul,
+article .prose ul ul,
+article .prose ol ul,
+.blog-content ul ul,
+.blog-content ol ul,
+.preserve-formatting ul ul,
+.preserve-formatting ol ul {
+  list-style-type: circle !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.prose ul ol,
+.prose ol ol,
+article .prose ul ol,
+article .prose ol ol,
+.blog-content ul ol,
+.blog-content ol ol,
+.preserve-formatting ul ol,
+.preserve-formatting ol ol {
+  list-style-type: lower-alpha !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Стилі для цитат */
+.blog-content blockquote,
+.prose blockquote,
+.preserve-formatting blockquote,
+article .blog-content blockquote,
+article .prose blockquote {
+  border-left: 4px solid #6c757d !important;
+  padding-left: 1em !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  font-style: italic !important;
+  margin-bottom: 1.5em !important;
+  color: #f8f9fa !important;
+  white-space: pre-wrap !important; /* Preserve whitespace in blockquotes */
+}
+
+/* Стилі для зображень у контенті блогу */
+.blog-content img,
+.prose img,
+.preserve-formatting img,
+article .blog-content img,
+article .prose img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1.5em auto !important;
+  display: block !important;
+  border-radius: 4px !important;
+  object-fit: cover !important; /* Змінено на cover для розтягування */
+}
+
+.blog-content .editor-image,
+.prose .editor-image,
+.preserve-formatting .editor-image {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1.5em auto !important;
+  display: block !important;
+  border-radius: 4px !important;
+  object-fit: cover !important; /* Змінено на cover для розтягування */
+}
+
+/* Center-aligned images */
+.prose img.mx-auto,
+article .prose img.mx-auto,
+.blog-content img.mx-auto,
+.preserve-formatting img.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* Left-aligned images */
+.prose img.float-left,
+article .prose img.float-left,
+.blog-content img.float-left,
+.preserve-formatting img.float-left {
+  float: left !important;
+  margin-right: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Right-aligned images */
+.prose img.float-right,
+article .prose img.float-right,
+.blog-content img.float-right,
+.preserve-formatting img.float-right {
+  float: right !important;
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Figure elements (often used for images with captions) */
+.prose figure,
+article .prose figure,
+.blog-content figure,
+.preserve-formatting figure {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.prose figure img,
+article .prose figure img,
+.blog-content figure img,
+.preserve-formatting figure img {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.prose figcaption,
+article .prose figcaption,
+.blog-content figcaption,
+.preserve-formatting figcaption {
+  text-align: center !important;
+  font-size: 0.875rem !important;
+  color: #9ca3af !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Fix for text-centered paragraphs */
+.prose p.text-center,
+article .prose p.text-center,
+.blog-content p.text-center,
+.preserve-formatting p.text-center {
+  text-align: center !important;
+}
+
+/* Fix for dark text on dark background */
+.prose p,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose li,
+.prose blockquote,
+article .prose p,
+article .prose h1,
+article .prose h2,
+article .prose h3,
+article .prose h4,
+article .prose h5,
+article .prose h6,
+article .prose li,
+article .prose blockquote,
+.blog-content p,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6,
+.blog-content li,
+.blog-content blockquote,
+.preserve-formatting p,
+.preserve-formatting h1,
+.preserve-formatting h2,
+.preserve-formatting h3,
+.preserve-formatting h4,
+.preserve-formatting h5,
+.preserve-formatting h6,
+.preserve-formatting li,
+.preserve-formatting blockquote {
+  color: #f8f9fa !important;
+}
+
+/* Стилі для посилань */
+.blog-content a,
+.prose a,
+.preserve-formatting a,
+article .blog-content a,
+article .prose a {
+  color: #90cdf4 !important;
+  text-decoration: none !important;
+}
+
+.blog-content a:hover,
+.prose a:hover,
+.preserve-formatting a:hover,
+article .blog-content a:hover,
+article .prose a:hover {
+  text-decoration: underline !important;
+}
+
+/* Fix for tables */
+.prose table,
+article .prose table,
+.blog-content table,
+.preserve-formatting table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-bottom: 1.5em !important;
+  color: #f8f9fa !important;
+}
+
+.blog-content th,
+.blog-content td,
+.prose th,
+.prose td,
+.preserve-formatting th,
+.preserve-formatting td,
+article .blog-content th,
+article .blog-content td,
+article .prose th,
+article .prose td {
+  border: 1px solid #4a5568 !important;
+  padding: 0.5em !important;
+  color: #f8f9fa !important;
+  white-space: pre-wrap !important; /* Preserve whitespace in table cells */
+}
+
+.blog-content th,
+.prose th,
+.preserve-formatting th,
+article .blog-content th,
+article .prose th {
+  background-color: #2d3748 !important;
+}
+
+/* Стилі для коду */
+.blog-content pre,
+.prose pre,
+.preserve-formatting pre,
+article .blog-content pre,
+article .prose pre {
+  background-color: #2d3748 !important;
+  padding: 1em !important;
+  border-radius: 4px !important;
+  overflow-x: auto !important;
+  margin-bottom: 1.5em !important;
+  white-space: pre !important;
+}
+
+.blog-content code,
+.prose code,
+.preserve-formatting code,
+article .blog-content code,
+article .prose code {
+  background-color: #2d3748 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
+  font-family: "Courier New", Courier, monospace !important;
+  color: #f8f9fa !important;
+}
+
+.blog-content pre code,
+.prose pre code,
+.preserve-formatting pre code,
+article .blog-content pre code,
+article .prose pre code {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+/* Додаткові стилі для збереження форматування */
+.preserve-formatting * {
+  white-space: pre-wrap !important;
+}
+
+/* Забезпечення видимості всіх елементів */
+.preserve-formatting h1,
+.preserve-formatting h2,
+.preserve-formatting h3,
+.preserve-formatting h4,
+.preserve-formatting h5,
+.preserve-formatting h6,
+.preserve-formatting p,
+.preserve-formatting ul,
+.preserve-formatting ol,
+.preserve-formatting li,
+.preserve-formatting blockquote,
+.preserve-formatting table,
+.preserve-formatting pre,
+.preserve-formatting code {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Забезпечення правильного відображення вкладених елементів */
+.preserve-formatting ul li,
+.preserve-formatting ol li {
+  display: list-item !important;
+}
+
+/* Забезпечення правильного відображення таблиць */
+.preserve-formatting table {
+  display: table !important;
+}
+
+.preserve-formatting tr {
+  display: table-row !important;
+}
+
+.preserve-formatting th,
+.preserve-formatting td {
+  display: table-cell !important;
+}
+
+/* Забезпечення правильного відображення зображень */
+.preserve-formatting img {
+  display: inline-block !important;
+}
+
+/* Забезпечення правильного відображення посилань */
+.preserve-formatting a {
+  display: inline !important;
+}
+
+/* Забезпечення правильного відображення коду */
+.preserve-formatting code {
+  display: inline !important;
+}
+
+/* Забезпечення правильного відображення pre */
+.preserve-formatting pre {
+  display: block !important;
+}
+
+/* Забезпечення правильного відображення pre code */
+.preserve-formatting pre code {
+  display: block !important;
+}
+
+/* Забезпечення правильного відображення blockquote */
+.preserve-formatting blockquote {
+  display: block !important;
+}
+
+/* Забезпечення правильного відображення figure */
+.preserve-formatting figure {
+  display: block !important;
+}
+
+/* Забезпечення правильного відображення figcaption */
+.preserve-formatting figcaption {
+  display: block !important;
+}
+
+/* Забезпечення правильного відображення hr */
+.preserve-formatting hr {
+  display: block !important;
+  border: 0 !important;
+  border-top: 1px solid #4a5568 !important;
+  margin-top: 2em !important;
+  margin-bottom: 2em !important;
+}
+
+/* Забезпечення правильного відображення br */
+.preserve-formatting br {
+  display: block !important;
+  content: "" !important;
+  margin-top: 1em !important;
+}
+
+/* Забезпечення правильного відображення span */
+.preserve-formatting span {
+  display: inline !important;
+}
+
+/* Забезпечення правильного відображення strong */
+.preserve-formatting strong {
+  font-weight: 700 !important;
+  color: #f8f9fa !important;
+}
+
+/* Забезпечення правильного відображення em */
+.preserve-formatting em {
+  font-style: italic !important;
+  color: #f8f9fa !important;
+}
+
+/* Забезпечення правильного відображення u */
+.preserve-formatting u {
+  text-decoration: underline !important;
+  color: #f8f9fa !important;
+}
+
+/* Забезпечення правильного відображення s */
+.preserve-formatting s {
+  text-decoration: line-through !important;
+  color: #f8f9fa !important;
+}
+
+/* Забезпечення правильного відображення sub */
+.preserve-formatting sub {
+  vertical-align: sub !important;
+  font-size: smaller !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення sup */
+.preserve-formatting sup {
+  vertical-align: super !important;
+  font-size: smaller !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення mark */
+.preserve-formatting mark {
+  background-color: rgba(139, 92, 246, 0.3) !important;
+  color: #e5e7eb !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25em !important;
+}
+
+/* Забезпечення правильного відображення small */
+.preserve-formatting small {
+  font-size: 0.875em !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення big */
+.preserve-formatting big {
+  font-size: 1.125em !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення tt */
+.preserve-formatting tt {
+  font-family: monospace !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення i */
+.preserve-formatting i {
+  font-style: italic !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення b */
+.preserve-formatting b {
+  font-weight: 700 !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення strike */
+.preserve-formatting strike {
+  text-decoration: line-through !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення del */
+.preserve-formatting del {
+  text-decoration: line-through !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення ins */
+.preserve-formatting ins {
+  text-decoration: underline !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення cite */
+.preserve-formatting cite {
+  font-style: italic !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення q */
+.preserve-formatting q {
+  quotes: "" " " "" "'" "'" !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення abbr */
+.preserve-formatting abbr {
+  text-decoration: underline dotted !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення acronym */
+.preserve-formatting acronym {
+  text-decoration: underline dotted !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення dfn */
+.preserve-formatting dfn {
+  font-style: italic !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення var */
+.preserve-formatting var {
+  font-style: italic !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення samp */
+.preserve-formatting samp {
+  font-family: monospace !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечення правильного відображення kbd */
+.preserve-formatting kbd {
+  font-family: monospace !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25em !important;
+  color: #e5e7eb !important;
+}
+
+/* Забезпечуємо відображення порожніх параграфів */
+.blog-content p:empty,
+.blog-content p:only-child:empty {
+  display: block !important;
+  min-height: 1.5em !important;
+  margin-bottom: 1.5em !important;
+}
+
+/* Зберігаємо послідовні параграфи */
+.blog-content p + p {
+  margin-top: 0 !important;
+  margin-bottom: 1.5em !important;
+}

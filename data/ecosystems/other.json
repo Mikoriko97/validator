@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Celestia",
+    "image": "/placeholder.svg?height=100&width=100&query=celestia logo",
+    "description": "Celestia is a modular data availability network that securely scales with the number of users.",
+    "buttons": [
+      {
+        "label": "Website",
+        "url": "https://celestia.org/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://celenium.io/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Sui",
+    "image": "/placeholder.svg?height=100&width=100&query=sui blockchain logo",
+    "description": "Sui is a Layer 1 blockchain designed from the ground up to enable creators and developers.",
+    "buttons": [
+      {
+        "label": "Website",
+        "url": "https://sui.io/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://suiscan.xyz/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Aptos",
+    "image": "/placeholder.svg?height=100&width=100&query=aptos blockchain logo",
+    "description": "Aptos is a Layer 1 blockchain built with Move, a safe and reliable language.",
+    "buttons": [
+      {
+        "label": "Website",
+        "url": "https://aptoslabs.com/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://explorer.aptoslabs.com/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Sei",
+    "image": "/placeholder.svg?height=100&width=100&query=sei network logo",
+    "description": "Sei is a specialized Layer 1 blockchain designed for trading.",
+    "buttons": [
+      {
+        "label": "Website",
+        "url": "https://www.sei.io/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://www.seiscan.app/",
+        "color": "secondary"
+      }
+    ]
+  }
+]

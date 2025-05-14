@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Cosmos Hub Testnet",
+    "image": "/cosmos-logo.png",
+    "description": "Testnet environment for the Cosmos Hub blockchain.",
+    "buttons": [
+      {
+        "label": "Faucet",
+        "url": "https://discord.com/channels/669268347736686612/953697793476821092",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://explorer.theta-testnet.polypore.xyz/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Polkadot Westend",
+    "image": "/polkadot-logo.png",
+    "description": "Westend is Polkadot's testnet environment for developers and validators.",
+    "buttons": [
+      {
+        "label": "Faucet",
+        "url": "https://wiki.polkadot.network/docs/learn-DOT#getting-westies",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://westend.subscan.io/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Ethereum Goerli",
+    "image": "/ethereum-logo.png",
+    "description": "Goerli is a cross-client proof-of-authority Ethereum testnet.",
+    "buttons": [
+      {
+        "label": "Faucet",
+        "url": "https://goerlifaucet.com/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://goerli.etherscan.io/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Solana Devnet",
+    "image": "/solana-logo.png",
+    "description": "Solana's development environment for testing applications and validators.",
+    "buttons": [
+      {
+        "label": "Faucet",
+        "url": "https://solfaucet.com/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://explorer.solana.com/?cluster=devnet",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Avalanche Fuji",
+    "image": "/avalanche-logo.png",
+    "description": "Fuji is Avalanche's testnet for developers and validators.",
+    "buttons": [
+      {
+        "label": "Faucet",
+        "url": "https://faucet.avax.network/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://testnet.avascan.info/",
+        "color": "secondary"
+      }
+    ]
+  }
+]

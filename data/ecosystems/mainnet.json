@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Cosmos Hub",
+    "image": "/cosmos-logo.png",
+    "description": "The Internet of Blockchains. Cosmos Hub is the first blockchain in the Cosmos ecosystem.",
+    "buttons": [
+      {
+        "label": "Delegate",
+        "url": "https://wallet.keplr.app/chains/cosmos-hub?modal=validator&chain=cosmoshub-4&validator_address=cosmosvaloper1lzhlnpahvznwfv4jmay2tgaha5kmz5qxerarrl",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://www.mintscan.io/cosmos/validators/cosmosvaloper1lzhlnpahvznwfv4jmay2tgaha5kmz5qxerarrl",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Polkadot",
+    "image": "/polkadot-logo.png",
+    "description": "Polkadot enables cross-blockchain transfers of any type of data or asset, not just tokens.",
+    "buttons": [
+      {
+        "label": "Stake",
+        "url": "https://polkadot.js.org/apps/#/staking",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://polkadot.subscan.io/validator/14QSBoJMK7f5SEEcge9fTrWEGEFKYNCFPNz3gGNrBGbGwLJc",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Ethereum",
+    "image": "/ethereum-logo.png",
+    "description": "Ethereum is a decentralized, open-source blockchain with smart contract functionality.",
+    "buttons": [
+      {
+        "label": "Stake",
+        "url": "https://ethereum.org/en/staking/",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://beaconcha.in/validator/0x8b7f54",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Solana",
+    "image": "/solana-logo.png",
+    "description": "Solana is a high-performance blockchain supporting builders around the world creating crypto apps.",
+    "buttons": [
+      {
+        "label": "Stake",
+        "url": "https://solanacompass.com/validators/7v5DXDvYzkgTdFYXYB12ZLKD6z8QfzR53N9hg6XgEQJE",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://explorer.solana.com/validator/7v5DXDvYzkgTdFYXYB12ZLKD6z8QfzR53N9hg6XgEQJE",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Avalanche",
+    "image": "/avalanche-logo.png",
+    "description": "Avalanche is an open, programmable smart contracts platform for decentralized applications.",
+    "buttons": [
+      {
+        "label": "Stake",
+        "url": "https://wallet.avax.network/staking",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://avascan.info/staking/validator/NodeID-5uYu3NKJZN2LQhP7uSbgJBpVfDNNw3can",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Near Protocol",
+    "image": "/near-logo.png",
+    "description": "NEAR is a user-friendly, carbon-neutral blockchain, built from the ground up to be performant, secure, and infinitely scalable.",
+    "buttons": [
+      {
+        "label": "Stake",
+        "url": "https://wallet.near.org/staking",
+        "color": "primary"
+      },
+      {
+        "label": "Explorer",
+        "url": "https://explorer.near.org/validators/unitynodes.poolv1.near",
+        "color": "secondary"
+      }
+    ]
+  }
+]

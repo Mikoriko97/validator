@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Cosmos Hub",
+    "image": "/cosmos-logo.png",
+    "description": "Official moderator for Cosmos Hub community channels, ensuring a positive and helpful environment.",
+    "buttons": [
+      {
+        "label": "Discord",
+        "url": "https://discord.gg/cosmosnetwork",
+        "color": "primary"
+      },
+      {
+        "label": "Telegram",
+        "url": "https://t.me/cosmosproject",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Polkadot",
+    "image": "/polkadot-logo.png",
+    "description": "Moderator for Polkadot community channels, helping users and maintaining community guidelines.",
+    "buttons": [
+      {
+        "label": "Discord",
+        "url": "https://dot.li/discord",
+        "color": "primary"
+      },
+      {
+        "label": "Telegram",
+        "url": "https://t.me/PolkadotOfficial",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Avalanche",
+    "image": "/avalanche-logo.png",
+    "description": "Community moderator for Avalanche, helping to grow and support the ecosystem.",
+    "buttons": [
+      {
+        "label": "Discord",
+        "url": "https://discord.com/invite/RwXY7P6",
+        "color": "primary"
+      },
+      {
+        "label": "Telegram",
+        "url": "https://t.me/avalancheavax",
+        "color": "secondary"
+      }
+    ]
+  }
+]

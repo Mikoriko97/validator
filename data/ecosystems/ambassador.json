@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Cosmos Hub",
+    "image": "/cosmos-logo.png",
+    "description": "Official ambassador for the Cosmos Hub ecosystem, helping to grow and support the community.",
+    "buttons": [
+      {
+        "label": "Community",
+        "url": "https://discord.gg/cosmosnetwork",
+        "color": "primary"
+      },
+      {
+        "label": "Resources",
+        "url": "https://cosmos.network/community",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Polkadot",
+    "image": "/polkadot-logo.png",
+    "description": "Polkadot ambassador program member, providing education and support to the community.",
+    "buttons": [
+      {
+        "label": "Community",
+        "url": "https://dot.li/discord",
+        "color": "primary"
+      },
+      {
+        "label": "Resources",
+        "url": "https://polkadot.network/ambassadors/",
+        "color": "secondary"
+      }
+    ]
+  },
+  {
+    "name": "Near Protocol",
+    "image": "/near-logo.png",
+    "description": "NEAR Certified Developer and ambassador, helping to grow the NEAR ecosystem.",
+    "buttons": [
+      {
+        "label": "Community",
+        "url": "https://near.org/ecosystem",
+        "color": "primary"
+      },
+      {
+        "label": "Resources",
+        "url": "https://near.org/learn",
+        "color": "secondary"
+      }
+    ]
+  }
+]
