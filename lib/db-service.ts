@@ -113,21 +113,69 @@ export interface BlockSignature {
   moniker: string
 }
 
-// Функція для отримання клієнта Supabase
+// Функція для отримання клієнта Supabase з детальним логуванням
 export function getSupabaseClient() {
   try {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
+    console.log("Environment check:", {
+      hasUrl: !!supabaseUrl,
+      hasKey: !!supabaseKey,
+      urlLength: supabaseUrl?.length || 0,
+      keyLength: supabaseKey?.length || 0,
+      nodeEnv: process.env.NODE_ENV,
+    })
+
     if (!supabaseUrl || !supabaseKey) {
-      console.warn("Supabase credentials not found, using mock data")
+      console.error("Missing Supabase credentials:", {
+        NEXT_PUBLIC_SUPABASE_URL: supabaseUrl ? "SET" : "MISSING",
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: supabaseKey ? "SET" : "MISSING",
+      })
       return null
     }
 
-    return createClient(supabaseUrl, supabaseKey)
+    // Перевіряємо формат URL
+    if (!supabaseUrl.startsWith("https://") || !supabaseUrl.includes(".supabase.co")) {
+      console.error("Invalid Supabase URL format:", supabaseUrl)
+      return null
+    }
+
+    console.log("Creating Supabase client with URL:", supabaseUrl.substring(0, 30) + "...")
+    const client = createClient(supabaseUrl, supabaseKey)
+    console.log("Supabase client created successfully")
+
+    return client
   } catch (error) {
     console.error("Error creating Supabase client:", error)
     return null
+  }
+}
+
+// Функція для тестування з'єднання з базою даних
+export async function testDatabaseConnection(): Promise<boolean> {
+  const supabase = getSupabaseClient()
+  if (!supabase) {
+    console.error("No Supabase client available for connection test")
+    return false
+  }
+
+  try {
+    console.log("Testing database connection...")
+
+    // Простий запит для перевірки з'єднання
+    const { data, error } = await supabase.from("validators").select("count").limit(1)
+
+    if (error) {
+      console.error("Database connection test failed:", error)
+      return false
+    }
+
+    console.log("Database connection test successful")
+    return true
+  } catch (error) {
+    console.error("Database connection test exception:", error)
+    return false
   }
 }
 
@@ -456,25 +504,36 @@ export const mockValidators: Validator[] = [
   },
 ]
 
-// Функції для роботи з базою даних
+// Функції для роботи з базою даних з покращеним логуванням
 export async function fetchValidators(): Promise<Validator[]> {
+  console.log("fetchValidators: Starting...")
+
   const supabase = getSupabaseClient()
   if (!supabase) {
-    console.log("Using mock validators data")
+    console.log("fetchValidators: No Supabase client, using mock data")
+    return mockValidators
+  }
+
+  // Тестуємо з'єднання
+  const connectionTest = await testDatabaseConnection()
+  if (!connectionTest) {
+    console.log("fetchValidators: Database connection failed, using mock data")
     return mockValidators
   }
 
   try {
+    console.log("fetchValidators: Executing query...")
     const { data, error } = await supabase.from("validators").select("*").order("voting_power", { ascending: false })
 
     if (error) {
-      console.error("Error fetching validators:", error)
+      console.error("fetchValidators: Database error:", error)
       return mockValidators
     }
 
+    console.log(`fetchValidators: Query successful, received ${data?.length || 0} records`)
     return data && data.length > 0 ? data : mockValidators
   } catch (error) {
-    console.error("Exception fetching validators:", error)
+    console.error("fetchValidators: Exception:", error)
     return mockValidators
   }
 }

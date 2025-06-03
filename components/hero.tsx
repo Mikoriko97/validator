@@ -2,7 +2,6 @@
 
 import { Activity, Server, Shield, Users, Award, TrendingUp } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import Link from "next/link"
 import { useEffect, useState } from "react"
 import BlocksTable from "./blocks-table"
 
@@ -207,6 +206,9 @@ function ValidatorsTable({
       commission_rate: 0.05,
       tokens: 245000,
       uptime: 100,
+      voting_power: 0.55,
+      blocks_signed: 1000,
+      missed_blocks: 10,
     },
     {
       operator_address: "polkadot-guardian",
@@ -215,6 +217,9 @@ function ValidatorsTable({
       commission_rate: 0.03,
       tokens: 1200000,
       uptime: 99.9,
+      voting_power: 0.65,
+      blocks_signed: 1200,
+      missed_blocks: 5,
     },
     {
       operator_address: "solana-beacon",
@@ -223,6 +228,9 @@ function ValidatorsTable({
       commission_rate: 0.07,
       tokens: 500000,
       uptime: 99.8,
+      voting_power: 0.75,
+      blocks_signed: 1100,
+      missed_blocks: 8,
     },
     {
       operator_address: "avalanche-peak",
@@ -231,6 +239,9 @@ function ValidatorsTable({
       commission_rate: 0.04,
       tokens: 350000,
       uptime: 99.95,
+      voting_power: 0.85,
+      blocks_signed: 1300,
+      missed_blocks: 2,
     },
     {
       operator_address: "ethereum-nexus",
@@ -239,6 +250,9 @@ function ValidatorsTable({
       commission_rate: 0.06,
       tokens: 800,
       uptime: 99.7,
+      voting_power: 0.95,
+      blocks_signed: 1400,
+      missed_blocks: 7,
     },
     {
       operator_address: "near-protocol",
@@ -247,6 +261,9 @@ function ValidatorsTable({
       commission_rate: 0.05,
       tokens: 180000,
       uptime: 99.85,
+      voting_power: 0.45,
+      blocks_signed: 900,
+      missed_blocks: 9,
     },
     {
       operator_address: "cardano-stake",
@@ -255,6 +272,9 @@ function ValidatorsTable({
       commission_rate: 0.04,
       tokens: 420000,
       uptime: 99.92,
+      voting_power: 0.5,
+      blocks_signed: 1050,
+      missed_blocks: 3,
     },
     {
       operator_address: "tezos-baker",
@@ -263,6 +283,9 @@ function ValidatorsTable({
       commission_rate: 0.06,
       tokens: 310000,
       uptime: 99.78,
+      voting_power: 0.6,
+      blocks_signed: 1150,
+      missed_blocks: 6,
     },
     {
       operator_address: "algorand-relay",
@@ -271,6 +294,9 @@ function ValidatorsTable({
       commission_rate: 0.03,
       tokens: 275000,
       uptime: 99.88,
+      voting_power: 0.7,
+      blocks_signed: 1250,
+      missed_blocks: 4,
     },
     {
       operator_address: "filecoin-miner",
@@ -279,6 +305,9 @@ function ValidatorsTable({
       commission_rate: 0.07,
       tokens: 520000,
       uptime: 99.75,
+      voting_power: 0.8,
+      blocks_signed: 1350,
+      missed_blocks: 1,
     },
   ]
 
@@ -310,6 +339,24 @@ function ValidatorsTable({
     return isNaN(num) ? "N/A" : `${num.toFixed(2)}%`
   }
 
+  const formatVotes = (value: any) => {
+    if (value === undefined || value === null) return "N/A"
+    const num = Number(value)
+    return isNaN(num) ? "N/A" : `${(num * 100).toFixed(2)}%`
+  }
+
+  const formatSigned = (value: any) => {
+    if (value === undefined || value === null) return "N/A"
+    const num = Number(value)
+    return isNaN(num) ? "N/A" : num.toLocaleString()
+  }
+
+  const formatMissed = (value: any) => {
+    if (value === undefined || value === null) return "N/A"
+    const num = Number(value)
+    return isNaN(num) ? "N/A" : num.toLocaleString()
+  }
+
   return (
     <div className="flex flex-col">
       <div className="overflow-x-auto rounded-lg border border-gray-800 relative z-10">
@@ -336,16 +383,19 @@ function ValidatorsTable({
                   Status
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Commission
+                  Slashes
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Proposal
+                  Votes
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Uptime
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Action
+                  Signed
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Missed
                 </th>
               </tr>
             </thead>
@@ -353,7 +403,10 @@ function ValidatorsTable({
               {displayedValidators.map((validator, index) => (
                 <tr
                   key={validator.operator_address || index}
-                  className="bg-gray-900/60 border-b border-gray-800 hover:bg-gray-800/60 relative"
+                  className="bg-gray-900/60 border-b border-gray-800 hover:bg-gray-800/60 relative cursor-pointer"
+                  onClick={() =>
+                    (window.location.href = `/validator/${validator.operator_address || `validator-${index + 1}`}`)
+                  }
                 >
                   <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
                     {validator.moniker || `Validator ${index + 1}`}
@@ -363,17 +416,13 @@ function ValidatorsTable({
                       {validator.status || "Active"}
                     </span>
                   </td>
-                  <td className="px-6 py-4">{formatCommission(validator.commission_rate)}</td>
-                  <td className="px-6 py-4">{formatTokens(validator.tokens)}</td>
-                  <td className="px-6 py-4">{formatUptime(validator.uptime)}</td>
-                  <td className="px-6 py-4 relative z-10">
-                    <Link
-                      href={`/validator/${validator.operator_address || `validator-${index + 1}`}`}
-                      className="text-purple-400 hover:text-purple-300 font-medium inline-block w-full h-full px-4 py-2 -mx-4 -my-2 relative z-20"
-                    >
-                      View Details
-                    </Link>
+                  <td className="px-6 py-4">
+                    <span className="text-green-400">0</span>
                   </td>
+                  <td className="px-6 py-4">{formatVotes(validator.voting_power)}</td>
+                  <td className="px-6 py-4">{formatUptime(validator.uptime)}</td>
+                  <td className="px-6 py-4 text-green-400">{formatSigned(validator.blocks_signed)}</td>
+                  <td className="px-6 py-4 text-red-400">{formatMissed(validator.missed_blocks)}</td>
                 </tr>
               ))}
             </tbody>
