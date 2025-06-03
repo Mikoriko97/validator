@@ -29,7 +29,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import ValidatorBlocksVisualization from "./validator-blocks-visualization"
 import LatestBlocks from "./latest-blocks"
 import UptimePerformanceChart from "./uptime-performance-chart"
 
@@ -465,34 +464,6 @@ export default function ValidatorProfile({ validator }: ValidatorProfileProps) {
 
                 {/* Use the updated Uptime Performance chart */}
                 <UptimePerformanceChart performance={validator.performance} className="mb-6" />
-
-                {/* Add the blocks visualization */}
-                <Card className="bg-gray-900/60 border-gray-800 mb-6">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-xl font-bold flex items-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-2 h-5 w-5 text-blue-400"
-                      >
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                        <rect x="7" y="7" width="3" height="3" />
-                        <rect x="14" y="7" width="3" height="3" />
-                        <rect x="7" y="14" width="3" height="3" />
-                        <rect x="14" y="14" width="3" height="3" />
-                      </svg>
-                      Recent Blocks
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ValidatorBlocksVisualization blocks={validator.recentBlocks} uptime={validator.uptime} />
-                  </CardContent>
-                </Card>
 
                 {/* Add the Latest Blocks component with normal size */}
                 <LatestBlocks blocks={validator.latestBlocks || []} />
